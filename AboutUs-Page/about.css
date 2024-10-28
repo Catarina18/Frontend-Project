@@ -1,0 +1,655 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+ 
+:root {
+    --color-primary: #57cc99;
+    --color-danger: #A50B0B;
+    --color-success: #1b9c5c;
+    --color-warning: #FDC500;
+    --color-white: #fff;
+    --color-gray: #A4A3A3;
+    --color-dark: #1e1e1f;
+    --color-background: #EDEAE0;
+    --color-blue-1: #00296B;
+    --color-blue-2: #00509D;
+    --color-yellow: #FFD500;
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 1.2rem;
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+    --box-shadow: 0 2rem 3rem var(--color-light);
+    --font-title: 5.5rem;
+    --font-subtitle: 1.5rem;
+    --font-size: 1.1rem;
+}
+ 
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: none;
+    border: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+
+ 
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 0.88rem;
+    background: var(--color-white);
+    user-select: none;
+    overflow-x: hidden;
+    color: var(--color-dark);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    max-width: 100vw; /* Garante que não ultrapassa a largura da viewport */
+    width: 100vw;
+}
+
+/*NAVBAR*/
+
+.divPrincipal {
+    display: flex;
+    background:
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url('./images/renith-r-A9VpotrPr1k-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    height: 85vh;
+ 
+}
+
+.menuNav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    height: 10vh;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    background-color: #1e1e1f85;
+}
+
+.iconLogo{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: var(--color-white);
+    height: 100%;
+    width: 40%;
+}
+
+.iconLogo img{
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+    color: var(--color-white);
+    margin-right: 1rem;
+}
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    height: 100%;
+    width: 60%;
+}
+
+.menu a{
+    color: var(--color-white);
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+
+.menu a:hover{
+    border-bottom: 2px solid var(--color-white);
+}
+
+.menu button{
+    padding: 0.5rem 2.5rem;
+    border-radius: 0.3rem;
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-size: 1.2rem;
+}
+
+.menu button:hover{
+    background: var(--color-success);
+    cursor: pointer;
+}
+
+.iconUser{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    color: var(--color-white);
+    height: 100%;
+    width: 40%;
+}
+
+.iconUser i{
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+.iconUser i:hover{
+    cursor: pointer;
+}
+
+/*FIM NAVBAR*/
+
+/*SECAO DE MEIO*/
+
+.textSection{
+    width: 100%;
+    margin-bottom: 5rem;
+}
+
+.textH2Section{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.textH2Section h2{
+    font-size: 3rem;
+}
+
+.textPSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.textPSection p{
+    font-size: 1rem;
+    text-align: start;
+    width: 35%;
+}
+
+@media screen and (max-width: 1000px){
+    .textPSection{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    .textPSection p{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .textH2Section h2{
+        display: flex;
+        text-align: center;
+        font-size: 2rem;
+    }
+    
+}
+
+/*CAMPOS*/
+
+.middlePageMenu{
+    height: 80vh;
+    width: 100%;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+   margin-top: 17rem;
+}
+
+.titleSlogan{
+    color: var(--color-white);
+    text-align: center;
+}
+
+.titleSlogan h1{
+    font-size: var(--font-title);
+}
+
+/*FIM CAMPOS*/
+
+/*HAMBURGUER MENU*/
+
+.iconUser .menuHam {
+    display: none;
+}
+
+#mobileMenu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(20px);
+    color: var(--color-white);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    z-index: 999;
+}
+
+#mobileMenu a {
+    display: block;
+   margin-top: 2rem;
+    color: var(--color-white);
+    font-size: 2rem;
+    text-align: center;
+    line-height: 4rem;
+}
+
+
+#mobileMenu button{
+    display: block;
+    color: var(--color-white);
+    font-size: 1.7rem;
+    text-align: center;
+    margin-top: 8rem;
+}
+
+#mobileMenu a:hover{
+    border-bottom: 2px solid var(--color-white);
+}
+
+#mobileMenu button:hover{
+    background: var(--color-success);
+    cursor: pointer;
+}
+
+.separador3 {
+    width: 0;
+    height: 50;
+    border-left: 98.5vw solid transparent;
+    border-bottom: 14vw solid white;
+    margin-top: 0;
+}
+
+
+@media screen and (max-width: 1000px){
+
+    .titleSlogan h1{
+        font-size: 3rem;
+    }
+
+    .titleSlogan p{
+        font-size: 1rem;
+    }
+
+    .menu{
+        font-size: 1rem;  
+    }
+
+    .menu button{
+        font-size: 1rem;
+    }
+
+    .numCourts h3{
+        font-size: 1.5rem;
+    }
+    
+    .numCourts p{
+        font-size: 0.8rem;
+    }
+    
+}
+
+@media screen and (max-width: 1000px) {
+    .middlePageMenu {
+        height: 90vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column; /* Organiza os elementos verticalmente */
+        margin: auto;
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .title {
+        width: 100%; /* Garante que o título ocupe toda a largura */
+        margin: auto;
+        text-align: center; /* Centraliza o título */
+        transform: translateY(-100px);
+        transition: all ease 400ms;
+    }
+
+    .titleSlogan h1 {
+        font-size: 3rem;
+        margin-top: 15rem;
+        color: var(--color-white);
+    }
+
+    .titleSlogan p {
+        font-size: 1rem;
+        color: var(--color-white);
+    }
+
+    .menu button{
+        font-size: 1rem;
+    }
+
+    .numCourts {
+        width: 100%; /* Garante que os campos ocupem toda a largura */
+        display: flex;
+        flex-direction: row;
+        transform: translateY(300px); /* Aplicar a tradução vertical */
+        transition: transform ease 700ms; /* Para a animação da transformação */
+    }
+
+    .numCourts h3 {
+        color: var(--color-warning);
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .numCourts p {
+        color: var(--color-white);
+        font-size: 0.7rem;
+        text-align: center;
+    }
+
+    .menu {
+        display: none; /* Oculta o menu com as letras */
+    }
+
+    .iconUser .menuHam {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-size: 2rem;
+        color: var(--color-white);
+    }
+
+    /* Coloca o menu hambúrguer ao lado do ícone de usuário */
+    .iconUserMenu {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 1rem;
+        width: 40%;
+    }
+
+    .mobileMenu button{
+        padding: 0.5rem 2.5rem;
+        border-radius: 0.3rem;
+        background: var(--color-primary);
+        color: var(--color-white);
+        font-size: 1rem;
+    }
+
+    .mouseIcon {
+        bottom: 15rem;  
+    }
+
+    .divPrincipal{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 90vh;
+        max-width: 100%;
+    }
+
+    
+}
+
+
+
+/* SECAO ABOUT */
+.aboutSection {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    color: var(--color-dark);
+    width: 100%;
+    margin: auto;
+    margin-bottom: 15rem;
+    height: 40rem;
+    padding-top: 23rem;
+    padding-bottom: 33rem;
+    background-color: #F2E5D5;
+}
+
+/* Estilo das imagens na seção About */
+.imageAbout {
+    position: relative;
+}
+
+.img1 {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.img2 {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 200px; /* Ajuste o valor para controlar a sobreposição vertical */
+    left: 170px; /* Ajuste o valor para controlar a sobreposição horizontal */
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Estilo do conteúdo de texto */
+.aboutUs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha o conteúdo à esquerda */
+    width: 60%;
+    margin: 0 auto; /* Centraliza o bloco de texto */
+    margin-right: -13rem; /* Ajusta a margem direita para compensar a imagem */
+    text-align: center;
+}
+
+.aboutUs h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: var(--color-dark);
+}
+
+.aboutUs p {
+    font-size: 1rem;
+    color: gray;
+    margin-bottom: 2rem;
+    max-width: 600px; /* Limita a largura do texto */
+    margin-left: 0; /* Remove a margem fixa */
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+/* Responsividade para telas menores */
+@media screen and (max-width: 1000px) {
+    .aboutSection {
+        flex-direction: column;
+        gap: 5rem;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+
+    .img1, .img2 {
+       display: none;
+    }
+
+    .aboutUs {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .aboutUs h2 {
+        font-size: 2.5rem;
+    }
+
+    .aboutUs p {
+        font-size: 1rem;
+        max-width: 100%;
+        margin-left: 0;
+        text-align: center; /* Centraliza o texto para telas menores */
+    }
+
+
+    .aboutUs{
+        margin-right: 0;
+    }
+}
+
+@keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-250px * 7));
+    }
+  }
+  
+  .slider {
+    background: transparent;
+    height: 100px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin-top: -15rem;
+   
+  }
+  
+  .slider::before,
+  .slider::after {
+    background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 100px;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+  }
+  
+  .slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
+  
+  .slider::before {
+    left: 0;
+    top: 0;
+  }
+  
+  .slider .slide-track {
+    animation: scroll 40s linear infinite;
+    display: flex;
+  }
+  
+  .slider .slide {
+    height: 100px;
+    width: 250px;
+  }
+
+
+/*FOOTER*/
+
+.custom-footer {
+    background:
+    linear-gradient( rgb(0, 0, 0), rgba(6, 66, 6, 0.459)),url('./images/ryan-searle-qjrjJnFypa0-unsplash.jpg');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 700px;
+    width: 100%;
+    padding: 1rem;
+    position: relative;
+    z-index: 0;
+}
+
+.footer-logo img {
+    height: 100px; /* Ajusta conforme necessário para o tamanho do logotipo */
+    margin-bottom: 3.5rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 90%;
+    padding: 1.5rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1); /* Pequeno efeito de zoom ao passar o rato */
+}
+
+.borderFooter{
+    width: 70%;
+    height: 1px;
+    background-color: white;
+    margin-top: 3rem;
+}
+
+.creditos{
+    color: white;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 1000px) {
+    .social-icons {
+        gap: 1rem;
+    }
+
+    .footer-logo img {
+        height: 60px; /* Tamanho menor do logotipo para telas menores */
+    }
+
+    .social-icons a {
+        font-size: 1.2rem;
+        padding: 0.4rem;
+    }
+
+    .custom-footer {
+        height: 300px; /* Altura menor para telas menores */
+        margin-top: -8.4rem;
+}
+}
